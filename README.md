@@ -1,3 +1,29 @@
+# bitsandbytes-rocm
+
+Credits to [broncotc/bitsandbytes-rocm](https://github.com/broncotc/bitsandbytes-rocm) for the original fork, and [0cc4m/bitsandbytes-rocm](https://github.com/0cc4m/bitsandbytes-rocm) for updating it. I'm only hosting a local copy as this has some slight tweaks in the Makefile, and instructions
+
+## Pre-Requisite
+
+This assumes you're an Arch Linux user like me (or derivation). If you're using a different distro, you can easily adapt it.
+
+In `Makefile`:
+* edit line 3 to point to your ROCm install folder (default: `/opt/rocm/`), if your distro installs it in an exotic place
+* that should be it!
+
+## Compiling
+
+```
+# activate your VENV, if using this within a VENV
+git clone https://git.ecker.tech/mrq/bitsandbytes-rocm
+make hip
+CUDA_VERSION=gfx1030 python setup.py install # assumes you're using a 6XXX series card
+python3 -m bitsandbytes # to validate it works
+```
+
+**!**NOTE**!**: this assumes you have a AMD 6XXX series card. Adapt this to your proper GFX version if different.
+
+---
+
 # bitsandbytes
 
 The bitsandbytes is a lightweight wrapper around CUDA custom functions, in particular 8-bit optimizers, matrix multiplication (LLM.int8()), and quantization functions.
