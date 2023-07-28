@@ -1,3 +1,4 @@
+# Copy from https://git.ecker.tech/mrq/bitsandbytes-rocm.git
 # bitsandbytes-rocm
 
 Credits to [broncotc/bitsandbytes-rocm](https://github.com/broncotc/bitsandbytes-rocm) for the original fork, and [0cc4m/bitsandbytes-rocm](https://github.com/0cc4m/bitsandbytes-rocm) for updating it. I'm only hosting a local copy as this has some slight tweaks in the Makefile, and instructions
